@@ -13,6 +13,8 @@
 		626517081A8E776B00F1D760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626517071A8E776B00F1D760 /* Images.xcassets */; };
 		6265170B1A8E776B00F1D760 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626517091A8E776B00F1D760 /* LaunchScreen.xib */; };
 		626517171A8E776B00F1D760 /* MakeSchoolNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517161A8E776B00F1D760 /* MakeSchoolNotesTests.swift */; };
+		626517221A8E7F9100F1D760 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517211A8E7F9100F1D760 /* Note.swift */; };
+		626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517231A8E7FC400F1D760 /* NoteBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		626517101A8E776B00F1D760 /* MakeSchoolNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeSchoolNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		626517151A8E776B00F1D760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		626517161A8E776B00F1D760 /* MakeSchoolNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeSchoolNotesTests.swift; sourceTree = "<group>"; };
+		626517211A8E7F9100F1D760 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		626517231A8E7FC400F1D760 /* NoteBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		626516FD1A8E776B00F1D760 /* MakeSchoolNotes */ = {
 			isa = PBXGroup;
 			children = (
+				626517201A8E7F8400F1D760 /* Entities */,
 				626517001A8E776B00F1D760 /* AppDelegate.swift */,
 				626517021A8E776B00F1D760 /* ViewController.swift */,
 				626517041A8E776B00F1D760 /* Main.storyboard */,
@@ -110,6 +115,15 @@
 				626517151A8E776B00F1D760 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		626517201A8E7F8400F1D760 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				626517211A8E7F9100F1D760 /* Note.swift */,
+				626517231A8E7FC400F1D760 /* NoteBook.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +228,8 @@
 			files = (
 				626517031A8E776B00F1D760 /* ViewController.swift in Sources */,
 				626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */,
+				626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */,
+				626517221A8E7F9100F1D760 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
