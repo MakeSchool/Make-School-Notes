@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import MakeSchoolLibrary
 
 class ViewController: UIViewController {
 
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(true)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

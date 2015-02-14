@@ -21,6 +21,7 @@
 		626517411A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */; };
 		626517421A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6265174C1A8E8C1700F1D760 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265174B1A8E8C1700F1D760 /* DismissSegue.swift */; };
+		6265174F1A8EB8BB00F1D760 /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		6265173C1A8E8BC700F1D760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6265173D1A8E8BC700F1D760 /* MakeSchoolLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeSchoolLibraryTests.swift; sourceTree = "<group>"; };
 		6265174B1A8E8C1700F1D760 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
+		6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		6265172B1A8E8BC700F1D760 /* MakeSchoolLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				6265174D1A8EB89E00F1D760 /* UIViews */,
 				6265174A1A8E8BEC00F1D760 /* UIKitExtensions */,
 				6265172E1A8E8BC700F1D760 /* MakeSchoolLibrary.h */,
 				6265172C1A8E8BC700F1D760 /* Supporting Files */,
@@ -235,6 +238,14 @@
 				6265174B1A8E8C1700F1D760 /* DismissSegue.swift */,
 			);
 			path = UIKitExtensions;
+			sourceTree = "<group>";
+		};
+		6265174D1A8EB89E00F1D760 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */,
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6265174C1A8E8C1700F1D760 /* DismissSegue.swift in Sources */,
+				6265174F1A8EB8BB00F1D760 /* LoadIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
