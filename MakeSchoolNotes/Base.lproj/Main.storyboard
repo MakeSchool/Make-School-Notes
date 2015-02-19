@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVX-TE-XOE">
-                                <rect key="frame" x="16" y="80" width="66" height="30"/>
-                                <state key="normal" title="Add Note">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xlJ-oH-4n6" kind="presentation" id="dk8-ST-am5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2t-JM-a78">
                                 <rect key="frame" x="265" y="285" width="70" height="30"/>
                                 <state key="normal" title="View Note">
@@ -38,22 +29,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CVX-TE-XOE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aem-uC-kgX"/>
-                            <constraint firstItem="CVX-TE-XOE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="dSf-M6-fuV"/>
                             <constraint firstAttribute="centerY" secondItem="y2t-JM-a78" secondAttribute="centerY" id="s38-u0-rRL"/>
                             <constraint firstAttribute="centerX" secondItem="y2t-JM-a78" secondAttribute="centerX" id="t7B-BG-fFt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Dashboard" id="7Br-C8-tpv"/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="7Br-C8-tpv">
+                        <barButtonItem key="leftBarButtonItem" title="+" systemItem="add" id="84d-fC-3lh">
+                            <connections>
+                                <segue destination="xlJ-oH-4n6" kind="presentation" id="Ewf-VA-8xF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042" y="436"/>
         </scene>
-        <!--View Controller-->
+        <!--New Note View Controller-->
         <scene sceneID="8Za-hM-G41">
             <objects>
-                <viewController id="xlJ-oH-4n6" sceneMemberID="viewController">
+                <viewController id="xlJ-oH-4n6" customClass="NewNoteViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T3y-kb-1Gf"/>
                         <viewControllerLayoutGuide type="bottom" id="CaW-cO-1Wu"/>
@@ -105,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deB-sh-ZWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="-417"/>
+            <point key="canvasLocation" x="1025" y="-377"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XRR-fc-H55">
@@ -127,13 +122,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-N7-I5s">
+                                <rect key="frame" x="16" y="54" width="568" height="481"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="contentInset">
+                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KcP-N7-I5s" secondAttribute="trailing" id="5qA-py-mWh"/>
+                            <constraint firstItem="KcP-N7-I5s" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="9Ss-gS-7S3"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="HWC-vA-tjF"/>
+                            <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="lUB-SN-NMj" secondAttribute="bottom" id="Hhk-Qp-wel"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="trailing" secondItem="kE8-m8-UkZ" secondAttribute="trailingMargin" id="Qou-PS-Jpi"/>
+                            <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="7kb-lB-qmE" secondAttribute="bottom" constant="10" id="TjA-tw-VRr"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" constant="20" id="au0-wN-sAI"/>
+                            <constraint firstItem="lUB-SN-NMj" firstAttribute="top" secondItem="KcP-N7-I5s" secondAttribute="bottom" id="mzP-GS-YQn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Hhk-Qp-wel"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVP-df-BEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,29 +198,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qc-mJ-2eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="436"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="CrJ-4T-8by">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6te-dY-iQF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2bA-c2-ZoQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="bee-Ub-ZUM"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="egV-P3-6dd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lQT-6F-E0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="301" y="430"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ruy-SN-d3m"/>
+        <segue reference="xnh-BP-VJB"/>
         <segue reference="VXM-6I-n4U"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517001A8E776B00F1D760 /* AppDelegate.swift */; };
-		626517031A8E776B00F1D760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517021A8E776B00F1D760 /* ViewController.swift */; };
 		626517061A8E776B00F1D760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626517041A8E776B00F1D760 /* Main.storyboard */; };
 		626517081A8E776B00F1D760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626517071A8E776B00F1D760 /* Images.xcassets */; };
 		6265170B1A8E776B00F1D760 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626517091A8E776B00F1D760 /* LaunchScreen.xib */; };
@@ -22,6 +21,8 @@
 		626517421A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6265174C1A8E8C1700F1D760 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265174B1A8E8C1700F1D760 /* DismissSegue.swift */; };
 		6265174F1A8EB8BB00F1D760 /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */; };
+		626517521A8ED8A300F1D760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517511A8ED8A300F1D760 /* ViewController.swift */; };
+		626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +74,6 @@
 		626516FB1A8E776B00F1D760 /* MakeSchoolNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeSchoolNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626516FF1A8E776B00F1D760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		626517001A8E776B00F1D760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		626517021A8E776B00F1D760 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		626517051A8E776B00F1D760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		626517071A8E776B00F1D760 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6265170A1A8E776B00F1D760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		6265173D1A8E8BC700F1D760 /* MakeSchoolLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeSchoolLibraryTests.swift; sourceTree = "<group>"; };
 		6265174B1A8E8C1700F1D760 /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
+		626517511A8ED8A300F1D760 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +153,9 @@
 		626516FD1A8E776B00F1D760 /* MakeSchoolNotes */ = {
 			isa = PBXGroup;
 			children = (
+				626517501A8ED8A300F1D760 /* ViewControllers */,
 				626517201A8E7F8400F1D760 /* Entities */,
 				626517001A8E776B00F1D760 /* AppDelegate.swift */,
-				626517021A8E776B00F1D760 /* ViewController.swift */,
 				626517041A8E776B00F1D760 /* Main.storyboard */,
 				626517071A8E776B00F1D760 /* Images.xcassets */,
 				626517091A8E776B00F1D760 /* LaunchScreen.xib */,
@@ -246,6 +248,15 @@
 				6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */,
 			);
 			path = UIViews;
+			sourceTree = "<group>";
+		};
+		626517501A8ED8A300F1D760 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				626517511A8ED8A300F1D760 /* ViewController.swift */,
+				626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,9 +432,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				626517031A8E776B00F1D760 /* ViewController.swift in Sources */,
+				626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */,
 				626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */,
 				626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */,
+				626517521A8ED8A300F1D760 /* ViewController.swift in Sources */,
 				626517221A8E7F9100F1D760 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
