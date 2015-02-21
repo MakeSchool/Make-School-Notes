@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import Realm
 
-class Note {
-  
+class Note : RLMObject {
+  dynamic var title = ""
+  dynamic var content = ""
 }

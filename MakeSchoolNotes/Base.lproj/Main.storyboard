@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LJl-58-pF0">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -17,21 +18,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2t-JM-a78">
-                                <rect key="frame" x="265" y="285" width="70" height="30"/>
-                                <state key="normal" title="View Note">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UKD-om-2Jt" kind="show" id="hMF-Ko-6Is"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-g6-lum">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" textLabel="xKT-wF-Uik" style="IBUITableViewCellStyleDefault" id="R8c-xB-GRF">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R8c-xB-GRF" id="kuZ-c5-D5a">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xKT-wF-Uik">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="y2t-JM-a78" secondAttribute="centerY" id="s38-u0-rRL"/>
-                            <constraint firstAttribute="centerX" secondItem="y2t-JM-a78" secondAttribute="centerX" id="t7B-BG-fFt"/>
+                            <constraint firstAttribute="trailing" secondItem="gQp-g6-lum" secondAttribute="trailing" id="1lV-Fo-zFE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="38d-Sa-OnZ"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4NI-Ls-wbO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="Hhb-xY-H0i"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="Oxb-Ik-ltO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gQp-g6-lum" secondAttribute="trailing" id="TSL-vy-UPu"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="clf-4t-8qy"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d3e-Vz-q8g"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nbO-Yz-puc"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tfg-Bl-jjy"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="tjt-SR-D4c"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4NI-Ls-wbO"/>
+                                <exclude reference="TSL-vy-UPu"/>
+                                <exclude reference="clf-4t-8qy"/>
+                                <exclude reference="d3e-Vz-q8g"/>
+                                <exclude reference="nbO-Yz-puc"/>
+                                <exclude reference="38d-Sa-OnZ"/>
+                                <exclude reference="Oxb-Ik-ltO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="7Br-C8-tpv">
                         <barButtonItem key="leftBarButtonItem" title="+" systemItem="add" id="84d-fC-3lh">
@@ -40,6 +72,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="gQp-g6-lum" id="UzB-q1-Pdp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +105,11 @@
                                                 <segue destination="BYZ-38-t0r" kind="custom" customClass="DismissSegue" id="ruy-SN-d3m"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="pl1-MP-3sa"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="pl1-MP-3sa">
+                                            <connections>
+                                                <action selector="saveButtonTapped:" destination="xlJ-oH-4n6" id="8cd-Uk-fl2"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                                 <variation key="default">
@@ -82,7 +121,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyV-bg-u7R">
                                 <rect key="frame" x="0.0" y="65" width="600" height="535"/>
                                 <connections>
-                                    <segue destination="UKD-om-2Jt" kind="embed" id="VXM-6I-n4U"/>
+                                    <segue destination="UKD-om-2Jt" kind="embed" identifier="ShowNote" id="VXM-6I-n4U"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -102,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="1025" y="-377"/>
         </scene>
-        <!--View Controller-->
+        <!--Note Display View Controller-->
         <scene sceneID="XRR-fc-H55">
             <objects>
-                <viewController id="UKD-om-2Jt" sceneMemberID="viewController">
+                <viewController id="UKD-om-2Jt" customClass="NoteDisplayViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MBJ-DX-YH5"/>
                         <viewControllerLayoutGuide type="bottom" id="lUB-SN-NMj"/>
@@ -126,16 +165,10 @@
                                 <rect key="frame" x="16" y="54" width="568" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="rect" keyPath="contentInset">
-                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
-                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
@@ -159,6 +192,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="KcP-N7-I5s" id="CLy-z9-GU9"/>
+                        <outlet property="titleTextField" destination="7kb-lB-qmE" id="Qac-Lj-qLZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVP-df-BEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,6 +240,5 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xnh-BP-VJB"/>
-        <segue reference="VXM-6I-n4U"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,7 +7,26 @@
 //
 
 import UIKit
+import Realm
 
 class NewNoteViewController: UIViewController {
 
+  var currentNote: Note?
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if (segue.identifier == "ShowNote") {
+      currentNote = Note()
+      let noteViewController = segue.destinationViewController as NoteDisplayViewController
+      noteViewController.note = currentNote
+    }
+  }
+  
+  @IBAction func saveButtonTapped(sender: AnyObject) {
+    let realm = RLMRealm.defaultRealm()
+    realm.transactionWithBlock() {
+      realm.addObject(self.currentNote)
+      self .dismissViewControllerAnimated(true, completion: nil)
+    }
+  }
+  
 }

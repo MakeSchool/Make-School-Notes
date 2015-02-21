@@ -17,12 +17,15 @@
 		6265172F1A8E8BC700F1D760 /* MakeSchoolLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6265172E1A8E8BC700F1D760 /* MakeSchoolLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		626517351A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */; };
 		6265173E1A8E8BC700F1D760 /* MakeSchoolLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265173D1A8E8BC700F1D760 /* MakeSchoolLibraryTests.swift */; };
-		626517411A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */; };
-		626517421A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6265174C1A8E8C1700F1D760 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265174B1A8E8C1700F1D760 /* DismissSegue.swift */; };
 		6265174F1A8EB8BB00F1D760 /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */; };
 		626517521A8ED8A300F1D760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517511A8ED8A300F1D760 /* ViewController.swift */; };
 		626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */; };
+		626517DA1A96452E00F1D760 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265174B1A8E8C1700F1D760 /* DismissSegue.swift */; };
+		629EA1711A97AD63000039FA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629EA1701A97AD63000039FA /* Realm.framework */; };
+		629EA1731A97AD78000039FA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 629EA1721A97AD78000039FA /* libc++.dylib */; };
+		629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629EA1741A97AD96000039FA /* RLMSupport.swift */; };
+		629EA1771A97AF27000039FA /* NoteDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,28 +50,7 @@
 			remoteGlobalIDString = 626516FA1A8E776B00F1D760;
 			remoteInfo = MakeSchoolNotes;
 		};
-		6265173F1A8E8BC700F1D760 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 626516F31A8E776B00F1D760 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 626517291A8E8BC700F1D760;
-			remoteInfo = MakeSchoolLibrary;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		626517481A8E8BC700F1D760 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				626517421A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		626516FB1A8E776B00F1D760 /* MakeSchoolNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeSchoolNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +74,10 @@
 		6265174E1A8EB8BB00F1D760 /* LoadIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
 		626517511A8ED8A300F1D760 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		629EA1701A97AD63000039FA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		629EA1721A97AD78000039FA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		629EA1741A97AD96000039FA /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				626517411A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Frameworks */,
+				629EA1731A97AD78000039FA /* libc++.dylib in Frameworks */,
+				629EA1711A97AD63000039FA /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,11 +118,14 @@
 		626516F21A8E776B00F1D760 = {
 			isa = PBXGroup;
 			children = (
+				629EA1721A97AD78000039FA /* libc++.dylib */,
+				629EA1741A97AD96000039FA /* RLMSupport.swift */,
 				626516FD1A8E776B00F1D760 /* MakeSchoolNotes */,
 				626517131A8E776B00F1D760 /* MakeSchoolNotesTests */,
 				6265172B1A8E8BC700F1D760 /* MakeSchoolLibrary */,
 				6265173A1A8E8BC700F1D760 /* MakeSchoolLibraryTests */,
 				626516FC1A8E776B00F1D760 /* Products */,
+				629EA1701A97AD63000039FA /* Realm.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,6 +245,7 @@
 			children = (
 				626517511A8ED8A300F1D760 /* ViewController.swift */,
 				626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */,
+				629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -280,12 +271,10 @@
 				626516F71A8E776B00F1D760 /* Sources */,
 				626516F81A8E776B00F1D760 /* Frameworks */,
 				626516F91A8E776B00F1D760 /* Resources */,
-				626517481A8E8BC700F1D760 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				626517401A8E8BC700F1D760 /* PBXTargetDependency */,
 			);
 			name = MakeSchoolNotes;
 			productName = MakeSchoolNotes;
@@ -434,8 +423,11 @@
 			files = (
 				626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */,
 				626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */,
+				629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */,
 				626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */,
 				626517521A8ED8A300F1D760 /* ViewController.swift in Sources */,
+				629EA1771A97AF27000039FA /* NoteDisplayViewController.swift in Sources */,
+				626517DA1A96452E00F1D760 /* DismissSegue.swift in Sources */,
 				626517221A8E7F9100F1D760 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,11 +474,6 @@
 			isa = PBXTargetDependency;
 			target = 626516FA1A8E776B00F1D760 /* MakeSchoolNotes */;
 			targetProxy = 626517381A8E8BC700F1D760 /* PBXContainerItemProxy */;
-		};
-		626517401A8E8BC700F1D760 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 626517291A8E8BC700F1D760 /* MakeSchoolLibrary */;
-			targetProxy = 6265173F1A8E8BC700F1D760 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -593,7 +580,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MakeSchoolNotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -603,7 +595,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MakeSchoolNotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -755,6 +752,7 @@
 				626517441A8E8BC700F1D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		626517491A8E8BC700F1D760 /* Build configuration list for PBXNativeTarget "MakeSchoolLibraryTests" */ = {
 			isa = XCConfigurationList;
@@ -763,6 +761,7 @@
 				626517461A8E8BC700F1D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
