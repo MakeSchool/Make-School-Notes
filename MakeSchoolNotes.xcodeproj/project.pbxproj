@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		624FFEE31A9B975E006F85AA /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */; };
+		624FFEE51A9BC1BF006F85AA /* KeyboardNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FFEE41A9BC1BF006F85AA /* KeyboardNotificationHandler.swift */; };
+		624FFEE61A9BC1D2006F85AA /* KeyboardNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FFEE41A9BC1BF006F85AA /* KeyboardNotificationHandler.swift */; };
 		626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517001A8E776B00F1D760 /* AppDelegate.swift */; };
 		626517061A8E776B00F1D760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626517041A8E776B00F1D760 /* Main.storyboard */; };
 		626517081A8E776B00F1D760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626517071A8E776B00F1D760 /* Images.xcassets */; };
@@ -55,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		624FFEE41A9BC1BF006F85AA /* KeyboardNotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationHandler.swift; sourceTree = "<group>"; };
 		626516FB1A8E776B00F1D760 /* MakeSchoolNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeSchoolNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626516FF1A8E776B00F1D760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		626517001A8E776B00F1D760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				6265174B1A8E8C1700F1D760 /* DismissSegue.swift */,
+				624FFEE41A9BC1BF006F85AA /* KeyboardNotificationHandler.swift */,
 			);
 			path = UIKitExtensions;
 			sourceTree = "<group>";
@@ -432,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				624FFEE61A9BC1D2006F85AA /* KeyboardNotificationHandler.swift in Sources */,
 				626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */,
 				626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */,
 				629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */,
@@ -458,6 +463,7 @@
 			files = (
 				6265174C1A8E8C1700F1D760 /* DismissSegue.swift in Sources */,
 				6265174F1A8EB8BB00F1D760 /* LoadIndicator.swift in Sources */,
+				624FFEE51A9BC1BF006F85AA /* KeyboardNotificationHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

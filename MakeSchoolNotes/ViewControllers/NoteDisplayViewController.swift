@@ -15,6 +15,7 @@ class NoteDisplayViewController: UIViewController {
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var contentTextView: UITextView!
   @IBOutlet weak var deleteButton: UIBarButtonItem!
+  @IBOutlet weak var toolbarBottomSpace: NSLayoutConstraint!
   
   var note: Note? {
     didSet {
@@ -30,8 +31,35 @@ class NoteDisplayViewController: UIViewController {
   
   required init(coder aDecoder: NSCoder) {
     editMode = true
-
+    
     super.init(coder: aDecoder)
+    
+    NSNotificationCenter.defaultCenter().addObserver(self,
+      selector: "keyboardWillBeShown:",
+      name: "UIKeyboardWillShowNotification",
+      object: nil
+    )
+    
+    NSNotificationCenter.defaultCenter().addObserver(self,
+      selector: "keyboardWillBeHidden:",
+      name: "UIKeyboardWillHideNotification",
+      object: nil
+    )
+  }
+  
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+  
+  func keyboardWillBeShown(notification: NSNotification) {
+    if let info = notification.userInfo {
+      var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+      self.toolbarBottomSpace.constant = keyboardFrame.size.height
+    }
+  }
+  
+  func keyboardWillBeHidden(notification: NSNotification) {
+    self.toolbarBottomSpace.constant = 0
   }
   
   override func viewWillAppear(animated: Bool) {

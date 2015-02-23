@@ -205,26 +205,19 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KcP-N7-I5s" secondAttribute="trailing" id="5qA-py-mWh"/>
                             <constraint firstItem="KcP-N7-I5s" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="9Ss-gS-7S3"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="HWC-vA-tjF"/>
-                            <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="lUB-SN-NMj" secondAttribute="bottom" id="Hhk-Qp-wel"/>
-                            <constraint firstItem="xpj-3K-BVH" firstAttribute="top" secondItem="KcP-N7-I5s" secondAttribute="bottom" id="LIj-HR-F5l"/>
+                            <constraint firstItem="xpj-3K-BVH" firstAttribute="top" secondItem="KcP-N7-I5s" secondAttribute="bottom" constant="65" id="LIj-HR-F5l"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="trailing" secondItem="kE8-m8-UkZ" secondAttribute="trailingMargin" id="Qou-PS-Jpi"/>
                             <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="7kb-lB-qmE" secondAttribute="bottom" constant="10" id="TjA-tw-VRr"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" constant="20" id="au0-wN-sAI"/>
                             <constraint firstItem="lUB-SN-NMj" firstAttribute="top" secondItem="xpj-3K-BVH" secondAttribute="bottom" id="mcL-Da-pOY"/>
-                            <constraint firstItem="lUB-SN-NMj" firstAttribute="top" secondItem="KcP-N7-I5s" secondAttribute="bottom" id="mzP-GS-YQn"/>
                             <constraint firstAttribute="trailing" secondItem="xpj-3K-BVH" secondAttribute="trailing" id="tzn-up-F1y"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Hhk-Qp-wel"/>
-                                <exclude reference="mzP-GS-YQn"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="KcP-N7-I5s" id="CLy-z9-GU9"/>
                         <outlet property="deleteButton" destination="5hd-gI-aly" id="fhZ-YI-rmy"/>
                         <outlet property="titleTextField" destination="7kb-lB-qmE" id="Qac-Lj-qLZ"/>
+                        <outlet property="toolbarBottomSpace" destination="mcL-Da-pOY" id="quL-jn-dvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVP-df-BEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
