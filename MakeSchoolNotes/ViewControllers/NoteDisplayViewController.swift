@@ -14,17 +14,31 @@ class NoteDisplayViewController: UIViewController {
   
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var contentTextView: UITextView!
+  @IBOutlet weak var deleteButton: UIBarButtonItem!
   
-  var note:Note? {
+  var note: Note? {
     didSet {
       displayNote(self.note)
     }
+  }
+  
+  var editMode: Bool {
+    didSet{
+      applyEditMode(editMode)
+    }
+  }
+  
+  required init(coder aDecoder: NSCoder) {
+    editMode = true
+
+    super.init(coder: aDecoder)
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
     displayNote(self.note)
+    applyEditMode(self.editMode)
   }
   
   override func viewWillDisappear(animated: Bool) {
@@ -42,13 +56,36 @@ class NoteDisplayViewController: UIViewController {
     }
   }
   
+  func applyEditMode(editMode: Bool) {
+    if let deleteButton = self.deleteButton {
+      self.deleteButton.enabled = editMode
+    }
+  }
+  
   func saveNote() {
-    let realm = RLMRealm.defaultRealm()
+    if let note = self.note {
+      let realm = RLMRealm.defaultRealm()
 
+      realm.transactionWithBlock { () -> Void in
+        note.title = self.titleTextField.text
+        note.content = self.contentTextView.text
+        note.modificationDate = NSDate()
+      }
+    }
+  }
+  
+  @IBAction func deleteButtonTapped(sender: AnyObject) {
+    let realm = RLMRealm.defaultRealm()
     realm.transactionWithBlock { () -> Void in
-      self.note?.title = self.titleTextField.text
-      self.note?.content = self.contentTextView.text
-      self.note?.modificationDate = NSDate()
+      realm.deleteObject(self.note)
+    }
+    
+    self.note = nil
+    
+    if let presentingViewController = self.presentingViewController {
+      presentingViewController.dismissViewControllerAnimated(true, completion: nil)
+    } else if let navigationController = self.navigationController {
+      navigationController.popViewControllerAnimated(true)
     }
   }
   

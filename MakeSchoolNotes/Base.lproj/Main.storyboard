@@ -78,7 +78,7 @@
                     <navigationItem key="navigationItem" title="Dashboard" id="7Br-C8-tpv">
                         <barButtonItem key="leftBarButtonItem" title="+" systemItem="add" id="84d-fC-3lh">
                             <connections>
-                                <segue destination="xlJ-oH-4n6" kind="presentation" id="Ewf-VA-8xF"/>
+                                <segue destination="xlJ-oH-4n6" kind="presentation" identifier="" id="Ewf-VA-8xF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -173,7 +173,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-N7-I5s">
-                                <rect key="frame" x="16" y="54" width="568" height="481"/>
+                                <rect key="frame" x="16" y="54" width="568" height="437"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -185,50 +185,51 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-3K-BVH">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="T05-sr-S9B"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="trash" id="5hd-gI-aly">
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="UKD-om-2Jt" id="naW-hG-PLr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xpj-3K-BVH" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leading" id="4b4-eR-Dbp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KcP-N7-I5s" secondAttribute="trailing" id="5qA-py-mWh"/>
                             <constraint firstItem="KcP-N7-I5s" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="9Ss-gS-7S3"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="HWC-vA-tjF"/>
                             <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="lUB-SN-NMj" secondAttribute="bottom" id="Hhk-Qp-wel"/>
+                            <constraint firstItem="xpj-3K-BVH" firstAttribute="top" secondItem="KcP-N7-I5s" secondAttribute="bottom" id="LIj-HR-F5l"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="trailing" secondItem="kE8-m8-UkZ" secondAttribute="trailingMargin" id="Qou-PS-Jpi"/>
                             <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="7kb-lB-qmE" secondAttribute="bottom" constant="10" id="TjA-tw-VRr"/>
                             <constraint firstItem="7kb-lB-qmE" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" constant="20" id="au0-wN-sAI"/>
+                            <constraint firstItem="lUB-SN-NMj" firstAttribute="top" secondItem="xpj-3K-BVH" secondAttribute="bottom" id="mcL-Da-pOY"/>
                             <constraint firstItem="lUB-SN-NMj" firstAttribute="top" secondItem="KcP-N7-I5s" secondAttribute="bottom" id="mzP-GS-YQn"/>
+                            <constraint firstAttribute="trailing" secondItem="xpj-3K-BVH" secondAttribute="trailing" id="tzn-up-F1y"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Hhk-Qp-wel"/>
+                                <exclude reference="mzP-GS-YQn"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="KcP-N7-I5s" id="CLy-z9-GU9"/>
+                        <outlet property="deleteButton" destination="5hd-gI-aly" id="fhZ-YI-rmy"/>
                         <outlet property="titleTextField" destination="7kb-lB-qmE" id="Qac-Lj-qLZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVP-df-BEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="94"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="zAC-9d-SkM">
-            <objects>
-                <viewController id="VJV-DC-O0T" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nAH-ud-B3S"/>
-                        <viewControllerLayoutGuide type="bottom" id="m5Y-d7-XfY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Cap-cA-6hV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xWJ-1K-RbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1743" y="858"/>
+            <point key="canvasLocation" x="1897" y="93.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fhJ-Rm-Rzw">
