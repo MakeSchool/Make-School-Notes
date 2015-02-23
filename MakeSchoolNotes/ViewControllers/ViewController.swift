@@ -12,7 +12,8 @@ import Realm
 
 class ViewController: UIViewController {
   
-  var notes:RLMResults!
+  var notes: RLMResults!
+  var selectedNote: Note?
 
   @IBOutlet weak var tableView: UITableView!
   
@@ -30,20 +31,20 @@ class ViewController: UIViewController {
     tableView.delegate = self
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  
-    var textView = UITextView()
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if (segue.identifier == "ShowExistingNote") {
+      let noteViewController = segue.destinationViewController as! NoteDisplayViewController
+      noteViewController.note = selectedNote
+    }
   }
 }
 
 extension ViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell") as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell") as! UITableViewCell
     let row = UInt(indexPath.row)
-    let note = notes.objectAtIndex(row) as Note
+    let note = notes.objectAtIndex(row) as! Note
     cell.textLabel!.text = note.title
 
     return cell
@@ -56,6 +57,9 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    selectedNote = notes.objectAtIndex(UInt(indexPath.row)) as? Note
+    self.performSegueWithIdentifier("ShowExistingNote", sender: self)
+  }
 }
 

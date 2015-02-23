@@ -16,7 +16,7 @@ class NewNoteViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if (segue.identifier == "ShowNote") {
       currentNote = Note()
-      let noteViewController = segue.destinationViewController as NoteDisplayViewController
+      let noteViewController = segue.destinationViewController as! NoteDisplayViewController
       noteViewController.note = currentNote
     }
   }

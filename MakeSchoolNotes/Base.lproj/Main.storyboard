@@ -74,6 +74,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="gQp-g6-lum" id="UzB-q1-Pdp"/>
+                        <segue destination="UKD-om-2Jt" kind="show" identifier="ShowExistingNote" id="Nig-wg-5Jb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,10 +151,10 @@
                         <viewControllerLayoutGuide type="bottom" id="lUB-SN-NMj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kE8-m8-UkZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="535"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-lB-qmE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-lB-qmE">
                                 <rect key="frame" x="16" y="20" width="568" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="pix-F8-8SA"/>
@@ -161,7 +162,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-N7-I5s">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-N7-I5s">
                                 <rect key="frame" x="16" y="54" width="568" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
@@ -240,5 +241,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xnh-BP-VJB"/>
+        <segue reference="Nig-wg-5Jb"/>
     </inferredMetricsTieBreakers>
 </document>

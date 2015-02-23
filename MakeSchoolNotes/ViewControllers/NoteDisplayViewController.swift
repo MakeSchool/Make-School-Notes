@@ -16,9 +16,15 @@ class NoteDisplayViewController: UIViewController {
   @IBOutlet weak var contentTextView: UITextView!
   
   var note:Note? {
-    didSet(newNote) {
-      displayNote(newNote)
+    didSet {
+      displayNote(self.note)
     }
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    displayNote(self.note)
   }
   
   override func viewWillDisappear(animated: Bool) {
@@ -28,11 +34,11 @@ class NoteDisplayViewController: UIViewController {
   }
   
   func displayNote(note: Note?) {
-    if let note = note {
-      titleTextField.text = note.title
-      contentTextView.text = note.content
-    } else {
-      //empty all fields
+    if let note = note,
+      titleTextField = titleTextField,
+      contentTextView = contentTextView  {
+        titleTextField.text = note.title
+        contentTextView.text = note.content
     }
   }
   
@@ -42,6 +48,7 @@ class NoteDisplayViewController: UIViewController {
     realm.transactionWithBlock { () -> Void in
       self.note?.title = self.titleTextField.text
       self.note?.content = self.contentTextView.text
+      self.note?.modificationDate = NSDate()
     }
   }
   
