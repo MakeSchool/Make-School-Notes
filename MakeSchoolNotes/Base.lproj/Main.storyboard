@@ -155,38 +155,118 @@
         <!--Note Display View Controller-->
         <scene sceneID="XRR-fc-H55">
             <objects>
-                <viewController id="UKD-om-2Jt" customClass="NoteDisplayViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="UKD-om-2Jt" customClass="NoteDisplayViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MBJ-DX-YH5"/>
                         <viewControllerLayoutGuide type="bottom" id="lUB-SN-NMj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kE8-m8-UkZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="535"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-lB-qmE">
-                                <rect key="frame" x="16" y="20" width="568" height="24"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="na5-ZJ-wHZ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yw-Rz-kjN">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="889"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kb-lB-qmE">
+                                                <rect key="frame" x="16" y="20" width="568" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="pix-F8-8SA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-N7-I5s" customClass="MKSTextView" customModule="MakeSchoolNotes" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="54" width="568" height="835"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="zlD-N8-Fwz"/>
+                                                </constraints>
+                                                <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                <mutableString key="text">Programming Test
+Work on Summer Academy Curriculum
+
+
+https://makegameswithus.hackpad.com/MGWU-Readiness-Test-PuQBuYXOJ4A
+
+
+T9R53ACA
+You can also enter the sale from a button at the top of the ticket page, though you'll need to enter your unique code, which is: T9R53ACA.
+As a back up you can also access the sale (and your code) from your Burner Profile, but be forwarned that this system cannot support the volume of all our ticket buyers.
+During the purchase process you will be prompted to either log in or create a new account in the Ticketfly system. You can create your account now or during the sale process. You may already of the world? Here's a handy timezone converter.
+
+Programming Test
+Work on Summer Academy Curriculum
+
+
+https://makegameswithus.hackpad.com/MGWU-Readiness-Test-PuQBuYXOJ4A
+
+
+T9R53ACA
+You can also enter the sale from a button at the top of the ticket page, though you'll need to enter your unique code, which is: T9R53ACA.
+As a back up you can also access the sale (and your code) from your Burner Profile, but be forwarned that this system cannot support the volume of all our ticket buyers.
+During the purchase process you will be prompted to either log in or create a new account in the Ticketfly system. You can create your account now or during the sale process. You may already have an account if you've ever bought a ticket to another event through Ticketfly, but please make sure that the email address on your Ticketfly account matches your Burner Profile.
+
+While you are buying tickets you will also have an opportunity to make an additional donation to help support Burning Man culture year-round.
+
+If you have questions about your order, please email us at ticketsupport@burningman.com
+
+See you in the Individual Sale!
+
+Burning Man Tickets
+
+*Clicking the link before 12pm (noon) PST on Wednesday, February 18 will  only give you a "code invalid" error message, so try to be patient and wait for noon. Not certain when 12pm PST is in your corner of the world? Here's a handy timezone converter.
+
+</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="zlD-N8-Fwz"/>
+                                                    </mask>
+                                                </variation>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="8Ug-ZA-o5R"/>
+                                            <constraint firstItem="KcP-N7-I5s" firstAttribute="leading" secondItem="8yw-Rz-kjN" secondAttribute="leading" constant="16" id="HLN-Kt-7MF"/>
+                                            <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="7kb-lB-qmE" secondAttribute="bottom" constant="10" id="Mw6-lj-Yig"/>
+                                            <constraint firstAttribute="trailing" secondItem="KcP-N7-I5s" secondAttribute="trailing" constant="16" id="NIp-fG-QU6"/>
+                                            <constraint firstAttribute="bottom" secondItem="KcP-N7-I5s" secondAttribute="bottom" id="OZg-35-wix"/>
+                                            <constraint firstItem="7kb-lB-qmE" firstAttribute="top" secondItem="8yw-Rz-kjN" secondAttribute="top" constant="20" id="Qr8-L1-ikv"/>
+                                            <constraint firstAttribute="trailing" secondItem="7kb-lB-qmE" secondAttribute="trailing" constant="16" id="TRJ-ws-Fcw"/>
+                                            <constraint firstItem="7kb-lB-qmE" firstAttribute="leading" secondItem="8yw-Rz-kjN" secondAttribute="leading" constant="16" id="oO2-Ww-oQB"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="8Ug-ZA-o5R"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="pix-F8-8SA"/>
+                                    <constraint firstItem="8yw-Rz-kjN" firstAttribute="top" secondItem="na5-ZJ-wHZ" secondAttribute="top" id="34J-7e-vgP"/>
+                                    <constraint firstAttribute="bottom" secondItem="8yw-Rz-kjN" secondAttribute="bottom" id="Box-XS-69t"/>
+                                    <constraint firstItem="8yw-Rz-kjN" firstAttribute="top" secondItem="na5-ZJ-wHZ" secondAttribute="top" id="JjG-aB-f2R"/>
+                                    <constraint firstAttribute="trailing" secondItem="8yw-Rz-kjN" secondAttribute="trailing" id="QDS-0d-kZj"/>
+                                    <constraint firstItem="8yw-Rz-kjN" firstAttribute="leading" secondItem="na5-ZJ-wHZ" secondAttribute="leading" id="a2d-9K-Ucp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KcP-N7-I5s" customClass="MKSTextView" customModule="MakeSchoolNotes" customModuleProvider="target">
-                                <rect key="frame" x="16" y="54" width="568" height="372"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="34J-7e-vgP"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpj-3K-BVH">
-                                <rect key="frame" x="0.0" y="491" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="T05-sr-S9B"/>
                                 </constraints>
@@ -202,16 +282,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xpj-3K-BVH" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leading" id="4b4-eR-Dbp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KcP-N7-I5s" secondAttribute="trailing" id="5qA-py-mWh"/>
-                            <constraint firstItem="KcP-N7-I5s" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="9Ss-gS-7S3"/>
-                            <constraint firstItem="7kb-lB-qmE" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leadingMargin" id="HWC-vA-tjF"/>
-                            <constraint firstItem="xpj-3K-BVH" firstAttribute="top" secondItem="KcP-N7-I5s" secondAttribute="bottom" constant="65" id="LIj-HR-F5l"/>
-                            <constraint firstItem="7kb-lB-qmE" firstAttribute="trailing" secondItem="kE8-m8-UkZ" secondAttribute="trailingMargin" id="Qou-PS-Jpi"/>
-                            <constraint firstItem="KcP-N7-I5s" firstAttribute="top" secondItem="7kb-lB-qmE" secondAttribute="bottom" constant="10" id="TjA-tw-VRr"/>
-                            <constraint firstItem="7kb-lB-qmE" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" constant="20" id="au0-wN-sAI"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" id="IQh-dd-kWV"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="top" secondItem="MBJ-DX-YH5" secondAttribute="bottom" id="IVx-5C-yVB"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="leading" secondItem="kE8-m8-UkZ" secondAttribute="leading" id="JmG-XP-sQQ"/>
+                            <constraint firstItem="8yw-Rz-kjN" firstAttribute="width" secondItem="kE8-m8-UkZ" secondAttribute="width" id="KJ3-Rl-VrB"/>
+                            <constraint firstItem="na5-ZJ-wHZ" firstAttribute="width" secondItem="kE8-m8-UkZ" secondAttribute="width" id="c21-kI-iVS"/>
+                            <constraint firstAttribute="trailing" secondItem="na5-ZJ-wHZ" secondAttribute="trailing" id="kVX-cq-ghU"/>
+                            <constraint firstItem="xpj-3K-BVH" firstAttribute="top" secondItem="na5-ZJ-wHZ" secondAttribute="bottom" id="lJv-7a-z3N"/>
                             <constraint firstItem="lUB-SN-NMj" firstAttribute="top" secondItem="xpj-3K-BVH" secondAttribute="bottom" id="mcL-Da-pOY"/>
                             <constraint firstAttribute="trailing" secondItem="xpj-3K-BVH" secondAttribute="trailing" id="tzn-up-F1y"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IVx-5C-yVB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="KcP-N7-I5s" id="CLy-z9-GU9"/>
@@ -244,7 +329,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xnh-BP-VJB"/>
-        <segue reference="VXM-6I-n4U"/>
+        <segue reference="ruy-SN-d3m"/>
+        <segue reference="Nig-wg-5Jb"/>
     </inferredMetricsTieBreakers>
 </document>
