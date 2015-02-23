@@ -42,10 +42,10 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell") as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell") as! NoteTableViewCell
     let row = UInt(indexPath.row)
     let note = notes.objectAtIndex(row) as! Note
-    cell.textLabel!.text = note.title
+    cell.note = note
 
     return cell
   }

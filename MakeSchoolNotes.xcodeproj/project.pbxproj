@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		624FFEE31A9B975E006F85AA /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */; };
 		626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517001A8E776B00F1D760 /* AppDelegate.swift */; };
 		626517061A8E776B00F1D760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626517041A8E776B00F1D760 /* Main.storyboard */; };
 		626517081A8E776B00F1D760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626517071A8E776B00F1D760 /* Images.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		626516FB1A8E776B00F1D760 /* MakeSchoolNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeSchoolNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		626516FF1A8E776B00F1D760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		626517001A8E776B00F1D760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		624FFEE11A9B971D006F85AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		626516F21A8E776B00F1D760 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		626516FD1A8E776B00F1D760 /* MakeSchoolNotes */ = {
 			isa = PBXGroup;
 			children = (
+				624FFEE11A9B971D006F85AA /* Views */,
 				626517501A8ED8A300F1D760 /* ViewControllers */,
 				626517201A8E7F8400F1D760 /* Entities */,
 				626517001A8E776B00F1D760 /* AppDelegate.swift */,
@@ -426,6 +437,7 @@
 				629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */,
 				626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */,
 				626517521A8ED8A300F1D760 /* ViewController.swift in Sources */,
+				624FFEE31A9B975E006F85AA /* NoteTableViewCell.swift in Sources */,
 				629EA1771A97AF27000039FA /* NoteDisplayViewController.swift in Sources */,
 				626517DA1A96452E00F1D760 /* DismissSegue.swift in Sources */,
 				626517221A8E7F9100F1D760 /* Note.swift in Sources */,
