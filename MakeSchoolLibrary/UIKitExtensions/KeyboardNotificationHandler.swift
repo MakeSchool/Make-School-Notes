@@ -43,11 +43,9 @@ class KeyboardNotificationHandler {
   }
   
   private func invokeHandler(notification: NSNotification, callback: KeyboardHandlerCallback?) {
-    if let info = notification.userInfo {
+    if let info = notification.userInfo, callback = callback {
       var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-      if let callback = callback {
         callback(keyboardFrame.height)
-      }
     }
   }
   
