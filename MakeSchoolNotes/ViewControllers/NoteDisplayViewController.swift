@@ -17,6 +17,8 @@ class NoteDisplayViewController: UIViewController {
   @IBOutlet weak var deleteButton: UIBarButtonItem!
   @IBOutlet weak var toolbarBottomSpace: NSLayoutConstraint!
   
+  var keyboardNotificationHandler: KeyboardNotificationHandler
+  
   var note: Note? {
     didSet {
       displayNote(self.note)
@@ -29,37 +31,27 @@ class NoteDisplayViewController: UIViewController {
     }
   }
   
+  
   required init(coder aDecoder: NSCoder) {
     editMode = true
-    
+    keyboardNotificationHandler = KeyboardNotificationHandler()
+
     super.init(coder: aDecoder)
     
-    NSNotificationCenter.defaultCenter().addObserver(self,
-      selector: "keyboardWillBeShown:",
-      name: "UIKeyboardWillShowNotification",
-      object: nil
-    )
-    
-    NSNotificationCenter.defaultCenter().addObserver(self,
-      selector: "keyboardWillBeHidden:",
-      name: "UIKeyboardWillHideNotification",
-      object: nil
-    )
-  }
-  
-  deinit {
-    NSNotificationCenter.defaultCenter().removeObserver(self)
-  }
-  
-  func keyboardWillBeShown(notification: NSNotification) {
-    if let info = notification.userInfo {
-      var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-      self.toolbarBottomSpace.constant = keyboardFrame.size.height
+    keyboardNotificationHandler.keyboardWillBeHiddenHandler = { (height: CGFloat) in
+      UIView.animateWithDuration(0.3, animations: { () -> Void in
+        self.toolbarBottomSpace.constant = 0
+        self.view.layoutIfNeeded()
+      })
     }
-  }
-  
-  func keyboardWillBeHidden(notification: NSNotification) {
-    self.toolbarBottomSpace.constant = 0
+    
+    keyboardNotificationHandler.keyboardWillBeShownHandler = { (height: CGFloat) in
+      UIView.animateWithDuration(0.3, animations: { () -> Void in
+        self.toolbarBottomSpace.constant = height
+        self.view.layoutIfNeeded()
+      })
+    }
+    
   }
   
   override func viewWillAppear(animated: Bool) {
