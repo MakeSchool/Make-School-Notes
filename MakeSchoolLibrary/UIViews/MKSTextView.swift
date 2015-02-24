@@ -8,13 +8,21 @@
 
 import UIKit
 
-class MKSTextView : UITextView {
+public class MKSTextView : UITextView {
 
   var placeholderText: String = "Tap to edit"
   
-  required init(coder aDecoder: NSCoder) {
+  public required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    
+    initialize()
+  }
+  
+  public override init(frame: CGRect, textContainer: NSTextContainer?) {
+    super.init(frame: frame, textContainer: textContainer)
+    initialize()
+  }
+  
+  private func initialize() {
     NSNotificationCenter.defaultCenter().addObserver(self,
       selector: "textViewDidBeginEditing:",
       name: UITextViewTextDidBeginEditingNotification,
@@ -30,7 +38,7 @@ class MKSTextView : UITextView {
     NSNotificationCenter.defaultCenter().removeObserver(self)
   }
   
-  override var text: String! {
+  override public var text: String! {
     didSet {
       if let text = text where text == "" {
         if (showsPlaceholderText == nil) {
@@ -40,7 +48,7 @@ class MKSTextView : UITextView {
     }
   }
   
-  var textValue:String {
+  public var textValue:String {
     get {
       if let showsPlaceholderText = showsPlaceholderText
         where showsPlaceholderText == true {
@@ -64,11 +72,11 @@ class MKSTextView : UITextView {
     }
   }
   
-  func textViewDidEndEditing(notification: NSNotification) {
+  private func textViewDidEndEditing(notification: NSNotification) {
     self.showsPlaceholderText = (count(self.text) == 0)
   }
   
-  func textViewDidBeginEditing(notification: NSNotification) {
+  private func textViewDidBeginEditing(notification: NSNotification) {
     if let showsPlaceholderText = showsPlaceholderText
       where showsPlaceholderText == true {
         self.showsPlaceholderText = false
