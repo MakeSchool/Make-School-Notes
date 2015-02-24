@@ -10,7 +10,7 @@ import UIKit
 
 public class MKSTextView : UITextView {
 
-  var placeholderText: String = "Tap to edit"
+  public var placeholderText: String = "Tap to edit"
   
   public required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -44,6 +44,10 @@ public class MKSTextView : UITextView {
         if (showsPlaceholderText == nil) {
           showsPlaceholderText = true
         }
+      } else {
+        if (showsPlaceholderText == nil) {
+          showsPlaceholderText = false
+        }
       }
     }
   }
@@ -59,7 +63,7 @@ public class MKSTextView : UITextView {
     }
   }
   
-  private (set) var showsPlaceholderText: Bool? {
+  public private (set) var showsPlaceholderText: Bool? {
     didSet {
       if let showsPlaceholderText = showsPlaceholderText {
         if (showsPlaceholderText == true) {
@@ -72,11 +76,11 @@ public class MKSTextView : UITextView {
     }
   }
   
-  private func textViewDidEndEditing(notification: NSNotification) {
+  public func textViewDidEndEditing(notification: NSNotification) {
     self.showsPlaceholderText = (count(self.text) == 0)
   }
   
-  private func textViewDidBeginEditing(notification: NSNotification) {
+  public func textViewDidBeginEditing(notification: NSNotification) {
     if let showsPlaceholderText = showsPlaceholderText
       where showsPlaceholderText == true {
         self.showsPlaceholderText = false
