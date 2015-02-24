@@ -40,7 +40,18 @@ class MKSTextView : UITextView {
     }
   }
   
-  var showsPlaceholderText: Bool? {
+  var textValue:String {
+    get {
+      if let showsPlaceholderText = showsPlaceholderText
+        where showsPlaceholderText == true {
+          return ""
+      } else {
+        return text
+      }
+    }
+  }
+  
+  private (set) var showsPlaceholderText: Bool? {
     didSet {
       if let showsPlaceholderText = showsPlaceholderText {
         if (showsPlaceholderText == true) {

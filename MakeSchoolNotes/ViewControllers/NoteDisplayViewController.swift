@@ -13,7 +13,7 @@ import Realm
 class NoteDisplayViewController: UIViewController {
   
   @IBOutlet weak var titleTextField: UITextField!
-  @IBOutlet weak var contentTextView: UITextView!
+  @IBOutlet weak var contentTextView: MKSTextView!
   @IBOutlet weak var deleteButton: UIBarButtonItem!
   @IBOutlet weak var toolbarBottomSpace: NSLayoutConstraint!
   
@@ -88,7 +88,7 @@ class NoteDisplayViewController: UIViewController {
 
       realm.transactionWithBlock { () -> Void in
         note.title = self.titleTextField.text
-        note.content = self.contentTextView.text
+        note.content = self.contentTextView.textValue
         note.modificationDate = NSDate()
       }
     }
