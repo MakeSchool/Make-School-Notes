@@ -37,6 +37,13 @@ class ViewController: UIViewController {
       noteViewController.note = selectedNote
     }
   }
+  
+  @IBAction func photoButtonTapped(sender: AnyObject) {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.modalPresentationStyle = .CurrentContext
+    imagePickerController.sourceType = .Camera
+    presentViewController(imagePickerController, animated: true, completion: nil)
+  }
 }
 
 extension ViewController: UITableViewDataSource {
