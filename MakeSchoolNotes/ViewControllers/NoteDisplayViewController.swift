@@ -17,7 +17,7 @@ class NoteDisplayViewController: UIViewController {
   @IBOutlet weak var deleteButton: UIBarButtonItem!
   @IBOutlet weak var toolbarBottomSpace: NSLayoutConstraint!
   
-  var keyboardNotificationHandler: KeyboardNotificationHandler
+  var keyboardNotificationHandler: KeyboardNotificationHandler?
   
   var note: Note? {
     didSet {
@@ -27,31 +27,18 @@ class NoteDisplayViewController: UIViewController {
   
   var editMode: Bool {
     didSet{
-      applyEditMode(editMode)
+      // TODO: think about better proxy for view lifecycle state
+      if (titleTextField != nil) {
+        applyEditMode(editMode)
+      }
     }
   }
   
   
   required init(coder aDecoder: NSCoder) {
     editMode = true
-    keyboardNotificationHandler = KeyboardNotificationHandler()
 
     super.init(coder: aDecoder)
-    
-    keyboardNotificationHandler.keyboardWillBeHiddenHandler = { (height: CGFloat) in
-      UIView.animateWithDuration(0.3, animations: { () -> Void in
-        self.toolbarBottomSpace.constant = 0
-        self.view.layoutIfNeeded()
-      })
-    }
-    
-    keyboardNotificationHandler.keyboardWillBeShownHandler = { (height: CGFloat) in
-      UIView.animateWithDuration(0.3, animations: { () -> Void in
-        self.toolbarBottomSpace.constant = height
-        self.view.layoutIfNeeded()
-      })
-    }
-    
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -59,10 +46,29 @@ class NoteDisplayViewController: UIViewController {
     
     displayNote(self.note)
     applyEditMode(self.editMode)
+    titleTextField.returnKeyType = .Next;
+    
+    keyboardNotificationHandler = KeyboardNotificationHandler()
+    
+    keyboardNotificationHandler!.keyboardWillBeHiddenHandler = { (height: CGFloat) in
+      UIView.animateWithDuration(0.3, animations: { () -> Void in
+        self.toolbarBottomSpace.constant = 0
+        self.view.layoutIfNeeded()
+      })
+    }
+    
+    keyboardNotificationHandler!.keyboardWillBeShownHandler = { (height: CGFloat) in
+      UIView.animateWithDuration(0.3, animations: { () -> Void in
+        self.toolbarBottomSpace.constant = height
+        self.view.layoutIfNeeded()
+      })
+    }
   }
   
   override func viewWillDisappear(animated: Bool) {
     super.viewWillDisappear(animated)
+    
+    keyboardNotificationHandler = nil
     
     saveNote()
   }
@@ -77,6 +83,10 @@ class NoteDisplayViewController: UIViewController {
   }
   
   func applyEditMode(editMode: Bool) {
+    if (!editMode) {
+      titleTextField.becomeFirstResponder()
+    }
+    
     if let deleteButton = self.deleteButton {
       self.deleteButton.enabled = editMode
     }
@@ -107,6 +117,18 @@ class NoteDisplayViewController: UIViewController {
     } else if let navigationController = self.navigationController {
       navigationController.popViewControllerAnimated(true)
     }
+  }
+  
+}
+
+extension NoteDisplayViewController: UITextFieldDelegate {
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    if (textField == titleTextField) {
+      contentTextView.becomeFirstResponder()
+    }
+    
+    return false
   }
   
 }

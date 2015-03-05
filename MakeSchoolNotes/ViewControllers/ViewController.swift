@@ -24,9 +24,18 @@ class ViewController: UIViewController {
     tableView.reloadData()
   }
   
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    if (self.navigationController!.navigationBarHidden) {
+      self.navigationController!.setNavigationBarHidden(false, animated: animated)
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    self.navigationController!.hidesBarsWhenKeyboardAppears = true
     tableView.dataSource = self
     tableView.delegate = self
   }
@@ -38,12 +47,6 @@ class ViewController: UIViewController {
     }
   }
   
-  @IBAction func photoButtonTapped(sender: AnyObject) {
-    let imagePickerController = UIImagePickerController()
-    imagePickerController.modalPresentationStyle = .CurrentContext
-    imagePickerController.sourceType = .Camera
-    presentViewController(imagePickerController, animated: true, completion: nil)
-  }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -53,7 +56,7 @@ extension ViewController: UITableViewDataSource {
     let row = UInt(indexPath.row)
     let note = notes.objectAtIndex(row) as! Note
     cell.note = note
-
+    
     return cell
   }
   
@@ -64,9 +67,19 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
+  
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     selectedNote = notes.objectAtIndex(UInt(indexPath.row)) as? Note
     self.performSegueWithIdentifier("ShowExistingNote", sender: self)
   }
+  
 }
 
+extension ViewController: UISearchBarDelegate {
+  
+  func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+    self.navigationController!.setNavigationBarHidden(false, animated: true)
+  }
+  
+}
