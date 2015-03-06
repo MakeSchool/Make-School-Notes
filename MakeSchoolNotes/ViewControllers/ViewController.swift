@@ -9,23 +9,50 @@
 import UIKit
 import Realm
 
-
 class ViewController: UIViewController {
   
-  var notes: RLMResults!
+  enum State {
+    case DefaultMode
+    case SearchMode
+  }
+  
+  var notes: RLMResults! {
+    didSet {
+      if let tableView = tableView {
+        tableView.reloadData()
+      }
+    }
+  }
+  
   var selectedNote: Note?
+  
+  var state: State = .DefaultMode {
+    didSet {
+      switch (state) {
+      case .DefaultMode:
+        notes = Note.allObjects()
+      case .SearchMode:
+        let searchText = searchBar?.text ?? ""
+        notes = searchNotes(searchText)
+      }
+    }
+  }
 
+  @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
-    notes = Note.allObjects()
-    tableView.reloadData()
+    state = .DefaultMode
   }
   
   override func viewWillDisappear(animated: Bool) {
     super.viewWillDisappear(animated)
+    
+    searchBar.resignFirstResponder()
+    searchBar.text = ""
+    searchBar.showsCancelButton = false
     
     if (self.navigationController!.navigationBarHidden) {
       self.navigationController!.setNavigationBarHidden(false, animated: animated)
@@ -47,6 +74,11 @@ class ViewController: UIViewController {
     }
   }
   
+  //MARK: - Search
+  func searchNotes(searchString: String) -> RLMResults {
+    let searchPredicate = NSPredicate(format: "title CONTAINS[c] %@ OR content CONTAINS[c] %@", searchString, searchString)
+    return Note.objectsWithPredicate(searchPredicate)
+  }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -77,9 +109,21 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UISearchBarDelegate {
   
+  func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    searchBar.setShowsCancelButton(true, animated: true)
+    state = .SearchMode
+  }
+  
   func searchBarCancelButtonClicked(searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
+    searchBar.text = ""
     self.navigationController!.setNavigationBarHidden(false, animated: true)
+    searchBar.setShowsCancelButton(false, animated: true)
+    state = .DefaultMode
+  }
+  
+  func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    notes = searchNotes(searchText)
   }
   
 }

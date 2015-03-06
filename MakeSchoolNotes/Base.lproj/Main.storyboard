@@ -20,7 +20,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-g6-lum">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="3Ge-wv-n7v">
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="3Ge-wv-n7v">
                                     <rect key="frame" x="0.0" y="278" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -90,6 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="3Ge-wv-n7v" id="QYh-3S-JWL"/>
                         <outlet property="tableView" destination="gQp-g6-lum" id="UzB-q1-Pdp"/>
                         <segue destination="UKD-om-2Jt" kind="show" identifier="ShowExistingNote" id="Nig-wg-5Jb"/>
                     </connections>
