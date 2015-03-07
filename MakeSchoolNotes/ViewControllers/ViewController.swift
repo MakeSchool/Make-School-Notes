@@ -31,9 +31,11 @@ class ViewController: UIViewController {
       switch (state) {
       case .DefaultMode:
         notes = Note.allObjects()
+        self.navigationController!.setNavigationBarHidden(false, animated: true)
       case .SearchMode:
         let searchText = searchBar?.text ?? ""
         notes = searchNotes(searchText)
+        self.navigationController!.setNavigationBarHidden(true, animated: true)
       }
     }
   }
@@ -62,7 +64,6 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.navigationController!.hidesBarsWhenKeyboardAppears = true
     tableView.dataSource = self
     tableView.delegate = self
   }
@@ -117,7 +118,6 @@ extension ViewController: UISearchBarDelegate {
   func searchBarCancelButtonClicked(searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     searchBar.text = ""
-    self.navigationController!.setNavigationBarHidden(false, animated: true)
     searchBar.setShowsCancelButton(false, animated: true)
     state = .DefaultMode
   }
