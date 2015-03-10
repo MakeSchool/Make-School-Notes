@@ -17,17 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obo-wk-Blg" customClass="StatusBarBackgroundView" customModule="MakeSchoolNotes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="600" height="20"/>
+                                <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3Ge-pl-eID"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="center" searchBarStyle="prominent" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-wv-n7v">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1PQ-j2-Pru"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ihz-eO-1Zk"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-g6-lum">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="3Ge-wv-n7v">
-                                    <rect key="frame" x="0.0" y="278" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="BYZ-38-t0r" id="Ihz-eO-1Zk"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" rowHeight="70" id="R8c-xB-GRF" customClass="NoteTableViewCell" customModule="MakeSchoolNotes" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -43,7 +53,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wondering how I should implement this" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKO-tK-oj4">
                                                     <rect key="frame" x="8" y="15" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -58,27 +68,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gQp-g6-lum" secondAttribute="trailing" id="1lV-Fo-zFE"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="38d-Sa-OnZ"/>
-                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4NI-Ls-wbO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="Hhb-xY-H0i"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="Oxb-Ik-ltO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gQp-g6-lum" secondAttribute="trailing" id="TSL-vy-UPu"/>
-                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="clf-4t-8qy"/>
-                            <constraint firstItem="gQp-g6-lum" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d3e-Vz-q8g"/>
-                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nbO-Yz-puc"/>
-                            <constraint firstItem="gQp-g6-lum" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tfg-Bl-jjy"/>
-                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="tjt-SR-D4c"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="top" secondItem="3Ge-wv-n7v" secondAttribute="bottom" id="8gV-OS-CiZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gQp-g6-lum" secondAttribute="bottom" id="9Fo-gX-LDj"/>
+                            <constraint firstItem="gQp-g6-lum" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Hnz-fJ-WfZ"/>
+                            <constraint firstItem="Obo-wk-Blg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Sr5-ZA-IPx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Obo-wk-Blg" secondAttribute="trailing" id="YbV-Z5-vtc"/>
+                            <constraint firstAttribute="trailing" secondItem="Obo-wk-Blg" secondAttribute="trailing" id="cyy-XR-mq4"/>
+                            <constraint firstAttribute="trailing" secondItem="3Ge-wv-n7v" secondAttribute="trailing" id="j2D-qM-LOR"/>
+                            <constraint firstAttribute="trailing" secondItem="gQp-g6-lum" secondAttribute="trailing" id="p79-Pa-bmC"/>
+                            <constraint firstItem="Obo-wk-Blg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="tf7-Jw-TKz"/>
+                            <constraint firstItem="3Ge-wv-n7v" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wxC-im-aXM"/>
+                            <constraint firstItem="3Ge-wv-n7v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yXW-8d-uok"/>
+                            <constraint firstItem="Obo-wk-Blg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zaD-qb-1Mk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="4NI-Ls-wbO"/>
-                                <exclude reference="TSL-vy-UPu"/>
-                                <exclude reference="clf-4t-8qy"/>
-                                <exclude reference="d3e-Vz-q8g"/>
-                                <exclude reference="nbO-Yz-puc"/>
-                                <exclude reference="38d-Sa-OnZ"/>
-                                <exclude reference="Oxb-Ik-ltO"/>
+                                <exclude reference="Sr5-ZA-IPx"/>
+                                <exclude reference="YbV-Z5-vtc"/>
                             </mask>
                         </variation>
                     </view>

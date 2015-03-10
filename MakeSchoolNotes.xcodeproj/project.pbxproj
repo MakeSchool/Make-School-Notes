@@ -33,6 +33,7 @@
 		629EA1731A97AD78000039FA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 629EA1721A97AD78000039FA /* libc++.dylib */; };
 		629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629EA1741A97AD96000039FA /* RLMSupport.swift */; };
 		629EA1771A97AF27000039FA /* NoteDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */; };
+		62B707A61AAF744A0031A941 /* StatusBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B707A51AAF744A0031A941 /* StatusBarBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		629EA1721A97AD78000039FA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		629EA1741A97AD96000039FA /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDisplayViewController.swift; sourceTree = "<group>"; };
+		62B707A51AAF744A0031A941 /* StatusBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */,
+				62B707A51AAF744A0031A941 /* StatusBarBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B707A61AAF744A0031A941 /* StatusBarBackgroundView.swift in Sources */,
 				624FFEE61A9BC1D2006F85AA /* KeyboardNotificationHandler.swift in Sources */,
 				626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */,
 				624FFEE81A9BD77A006F85AA /* MKSTextView.swift in Sources */,
