@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		624FFEE31A9B975E006F85AA /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */; };
-		626204681AF15D94008C4132 /* ConvenienceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626204591AF15D8B008C4132 /* ConvenienceKit.framework */; };
 		626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517001A8E776B00F1D760 /* AppDelegate.swift */; };
 		626517061A8E776B00F1D760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626517041A8E776B00F1D760 /* Main.storyboard */; };
 		626517081A8E776B00F1D760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626517071A8E776B00F1D760 /* Images.xcassets */; };
@@ -23,7 +22,9 @@
 		629EA1731A97AD78000039FA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 629EA1721A97AD78000039FA /* libc++.dylib */; };
 		629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629EA1741A97AD96000039FA /* RLMSupport.swift */; };
 		629EA1771A97AF27000039FA /* NoteDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */; };
-		62B707A61AAF744A0031A941 /* StatusBarBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B707A51AAF744A0031A941 /* StatusBarBackgroundView.swift */; };
+		62A70CE71AF175D500B09606 /* ConvenienceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626204591AF15D8B008C4132 /* ConvenienceKit.framework */; };
+		62A70CE81AF175D500B09606 /* ConvenienceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 626204591AF15D8B008C4132 /* ConvenienceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		62A70CEE1AF1792800B09606 /* StyleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A70CED1AF1792800B09606 /* StyleConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,28 @@
 			remoteGlobalIDString = 626516FA1A8E776B00F1D760;
 			remoteInfo = MakeSchoolNotes;
 		};
+		62A70CE91AF175D500B09606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 626204521AF15D8B008C4132 /* ConvenienceKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 62EAE5DB1AD82A000069D0EC;
+			remoteInfo = ConvenienceKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		62A70CEB1AF175D500B09606 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				62A70CE81AF175D500B09606 /* ConvenienceKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,7 +115,7 @@
 		629EA1721A97AD78000039FA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		629EA1741A97AD96000039FA /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDisplayViewController.swift; sourceTree = "<group>"; };
-		62B707A51AAF744A0031A941 /* StatusBarBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarBackgroundView.swift; sourceTree = "<group>"; };
+		62A70CED1AF1792800B09606 /* StyleConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				626204681AF15D94008C4132 /* ConvenienceKit.framework in Frameworks */,
+				62A70CE71AF175D500B09606 /* ConvenienceKit.framework in Frameworks */,
 				629EA1731A97AD78000039FA /* libc++.dylib in Frameworks */,
 				629EA1711A97AD63000039FA /* Realm.framework in Frameworks */,
 			);
@@ -136,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				624FFEE21A9B975E006F85AA /* NoteTableViewCell.swift */,
-				62B707A51AAF744A0031A941 /* StatusBarBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +207,7 @@
 		626516FD1A8E776B00F1D760 /* MakeSchoolNotes */ = {
 			isa = PBXGroup;
 			children = (
+				62A70CEC1AF1791800B09606 /* Constants */,
 				624FFEE11A9B971D006F85AA /* Views */,
 				626517501A8ED8A300F1D760 /* ViewControllers */,
 				626517201A8E7F8400F1D760 /* Entities */,
@@ -242,6 +264,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		62A70CEC1AF1791800B09606 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				62A70CED1AF1792800B09606 /* StyleConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -262,10 +292,12 @@
 				626516F71A8E776B00F1D760 /* Sources */,
 				626516F81A8E776B00F1D760 /* Frameworks */,
 				626516F91A8E776B00F1D760 /* Resources */,
+				62A70CEB1AF175D500B09606 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				62A70CEA1AF175D500B09606 /* PBXTargetDependency */,
 			);
 			name = MakeSchoolNotes;
 			productName = MakeSchoolNotes;
@@ -442,11 +474,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62B707A61AAF744A0031A941 /* StatusBarBackgroundView.swift in Sources */,
 				626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */,
 				626517011A8E776B00F1D760 /* AppDelegate.swift in Sources */,
 				629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */,
 				626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */,
+				62A70CEE1AF1792800B09606 /* StyleConstants.swift in Sources */,
 				626517521A8ED8A300F1D760 /* ViewController.swift in Sources */,
 				624FFEE31A9B975E006F85AA /* NoteTableViewCell.swift in Sources */,
 				629EA1771A97AF27000039FA /* NoteDisplayViewController.swift in Sources */,
@@ -493,6 +525,11 @@
 			isa = PBXTargetDependency;
 			target = 626516FA1A8E776B00F1D760 /* MakeSchoolNotes */;
 			targetProxy = 626517381A8E8BC700F1D760 /* PBXContainerItemProxy */;
+		};
+		62A70CEA1AF175D500B09606 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ConvenienceKit;
+			targetProxy = 62A70CE91AF175D500B09606 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
