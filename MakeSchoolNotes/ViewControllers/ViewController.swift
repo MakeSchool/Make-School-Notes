@@ -11,6 +11,10 @@ import Realm
 
 class ViewController: UIViewController {
   
+  @IBOutlet weak var searchBar: UISearchBar!
+  @IBOutlet weak var tableView: UITableView!
+  
+  // In Default Mode all Notes are displayed, in search mode only a filtered subset
   enum State {
     case DefaultMode
     case SearchMode
@@ -18,16 +22,20 @@ class ViewController: UIViewController {
   
   var notes: RLMResults! {
     didSet {
+      // Whenever notes update, update the table view
       if let tableView = tableView {
         tableView.reloadData()
       }
     }
   }
   
+  // temporarily stores the note that a user selected by tapping a cell
   var selectedNote: Note?
   
+  // .DefaultMode is the initial state
   var state: State = .DefaultMode {
     didSet {
+      // update notes and search bar whenever State changes
       switch (state) {
       case .DefaultMode:
         notes = Note.allObjects()
@@ -44,11 +52,13 @@ class ViewController: UIViewController {
     }
   }
   
+  //MARK: View Lifecycle
+  
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
     // set the background color of this view, to cover the free space under the status bar, when the navigaiton bar disappears
-    self.view.backgroundColor = UIColor(red: 54/255.0, green: 103/255.0, blue: 138/255.0, alpha: 1.0)
+    self.view.backgroundColor = StyleConstants.defaultBlueColor
     
     state = .DefaultMode
   }
@@ -62,9 +72,6 @@ class ViewController: UIViewController {
       self.navigationController!.setNavigationBarHidden(false, animated: animated)
     }
   }
-
-  @IBOutlet weak var searchBar: UISearchBar!
-  @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -72,6 +79,8 @@ class ViewController: UIViewController {
     tableView.dataSource = self
     tableView.delegate = self
   }
+  
+  //MARK: Segues
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if (segue.identifier == "ShowExistingNote") {
@@ -81,6 +90,7 @@ class ViewController: UIViewController {
   }
   
   //MARK: - Search
+  
   func searchNotes(searchString: String) -> RLMResults {
     let searchPredicate = NSPredicate(format: "title CONTAINS[c] %@ OR content CONTAINS[c] %@", searchString, searchString)
     return Note.objectsWithPredicate(searchPredicate)
