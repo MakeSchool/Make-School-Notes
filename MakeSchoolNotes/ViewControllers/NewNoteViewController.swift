@@ -13,8 +13,13 @@ class NewNoteViewController: UIViewController {
 
   var currentNote: Note?
   
+  /* 
+    This segue is performed as soon as NewNoteViewController appears.
+    NewNoteViewController has a container view that contains the NoteDisplayViewController
+  */
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if (segue.identifier == "ShowNote") {
+    if (segue.identifier == "ShowNewNote") {
+      // create a new Note and hold onto it, to be able to save it later
       currentNote = Note()
       let noteViewController = segue.destinationViewController as! NoteDisplayViewController
       noteViewController.note = currentNote
@@ -23,6 +28,7 @@ class NewNoteViewController: UIViewController {
   }
   
   @IBAction func saveButtonTapped(sender: AnyObject) {
+    // if the save button is tapped, store the new note
     let realm = RLMRealm.defaultRealm()
     realm.transactionWithBlock() {
       realm.addObject(self.currentNote)
