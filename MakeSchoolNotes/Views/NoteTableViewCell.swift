@@ -10,7 +10,8 @@ import UIKit
 
 class NoteTableViewCell: UITableViewCell {
 
-  lazy var dateFormatter: NSDateFormatter = {
+  // initialize the date formatter only once, using a static computed property
+  static var dateFormatter: NSDateFormatter = {
     var formatter = NSDateFormatter()
     formatter.dateFormat = "yyyy-MM-dd"
     return formatter
@@ -21,14 +22,10 @@ class NoteTableViewCell: UITableViewCell {
 
   var note: Note? {
     didSet {
-      showNote(self.note)
-    }
-  }
-  
-  func showNote(note: Note?) {
-    if let note = note, titleLabel = titleLabel, dateLabel = dateLabel {
-      self.titleLabel.text = note.title
-      self.dateLabel.text = dateFormatter.stringFromDate(note.modificationDate)
+      if let note = note, titleLabel = titleLabel, dateLabel = dateLabel {
+        self.titleLabel.text = note.title
+        self.dateLabel.text = NoteTableViewCell.dateFormatter.stringFromDate(note.modificationDate)
+      }
     }
   }
   
