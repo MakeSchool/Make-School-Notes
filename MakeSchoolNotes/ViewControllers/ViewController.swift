@@ -32,16 +32,17 @@ class ViewController: UIViewController {
       case .DefaultMode:
         notes = Note.allObjects()
         self.navigationController!.setNavigationBarHidden(false, animated: true)
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
       case .SearchMode:
         let searchText = searchBar?.text ?? ""
+        searchBar.setShowsCancelButton(true, animated: true)
         notes = searchNotes(searchText)
         self.navigationController!.setNavigationBarHidden(true, animated: true)
       }
     }
   }
-
-  @IBOutlet weak var searchBar: UISearchBar!
-  @IBOutlet weak var tableView: UITableView!
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
@@ -51,15 +52,16 @@ class ViewController: UIViewController {
   
   override func viewWillDisappear(animated: Bool) {
     super.viewWillDisappear(animated)
-    
-    searchBar.resignFirstResponder()
-    searchBar.text = ""
-    searchBar.showsCancelButton = false
+
+    state = .DefaultMode
     
     if (self.navigationController!.navigationBarHidden) {
       self.navigationController!.setNavigationBarHidden(false, animated: animated)
     }
   }
+
+  @IBOutlet weak var searchBar: UISearchBar!
+  @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -111,14 +113,10 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UISearchBarDelegate {
   
   func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-    searchBar.setShowsCancelButton(true, animated: true)
     state = .SearchMode
   }
   
   func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-    searchBar.resignFirstResponder()
-    searchBar.text = ""
-    searchBar.setShowsCancelButton(false, animated: true)
     state = .DefaultMode
   }
   

@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 import Realm
+import ConvenienceKit
 
 class NoteDisplayViewController: UIViewController {
   
   @IBOutlet weak var titleTextField: UITextField!
-  @IBOutlet weak var contentTextView: MKSTextView!
+  @IBOutlet weak var contentTextView: TextView!
   @IBOutlet weak var deleteButton: UIBarButtonItem!
   @IBOutlet weak var toolbarBottomSpace: NSLayoutConstraint!
   
