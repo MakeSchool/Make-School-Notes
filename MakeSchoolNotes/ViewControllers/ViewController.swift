@@ -47,6 +47,9 @@ class ViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
+    // set the background color of this view, to cover the free space under the status bar, when the navigaiton bar disappears
+    self.view.backgroundColor = UIColor(red: 54/255.0, green: 103/255.0, blue: 138/255.0, alpha: 1.0)
+    
     state = .DefaultMode
   }
   
