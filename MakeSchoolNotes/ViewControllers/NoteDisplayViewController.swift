@@ -35,12 +35,15 @@ class NoteDisplayViewController: UIViewController {
     }
   }
   
+  //MARK: Initialization
   
   required init(coder aDecoder: NSCoder) {
     editMode = true
 
     super.init(coder: aDecoder)
   }
+  
+  //MARK: View Lifecycle
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
@@ -74,6 +77,8 @@ class NoteDisplayViewController: UIViewController {
     saveNote()
   }
   
+  //MARK: Business Logic
+  
   func displayNote(note: Note?) {
     if let note = note,
       titleTextField = titleTextField,
@@ -104,6 +109,8 @@ class NoteDisplayViewController: UIViewController {
       }
     }
   }
+  
+  //MARK: Button Callbacks
   
   @IBAction func deleteButtonTapped(sender: AnyObject) {
     let realm = RLMRealm.defaultRealm()
