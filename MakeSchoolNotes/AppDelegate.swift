@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
-    UINavigationBar.appearance().barTintColor = UIColor(red: 54/255.0, green: 103/255.0, blue: 138/255.0, alpha: 1.0)
+    UINavigationBar.appearance().barTintColor = StyleConstants.defaultBlueColor
     UINavigationBar.appearance().tintColor = UIColor.whiteColor()
     UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     UINavigationBar.appearance().translucent = false
     
-    UIToolbar.appearance().barTintColor = UIColor(red: 54/255.0, green: 103/255.0, blue: 138/255.0, alpha: 1.0)
+    UIToolbar.appearance().barTintColor = StyleConstants.defaultBlueColor
     UIToolbar.appearance().tintColor = UIColor.whiteColor()
     UIToolbar.appearance().translucent = false
     
