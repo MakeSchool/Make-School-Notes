@@ -26,14 +26,7 @@ class NoteDisplayViewController: UIViewController {
     }
   }
   
-  var editMode: Bool {
-    didSet{
-      // TODO: think about better proxy for view lifecycle state
-      if (titleTextField != nil) {
-        applyEditMode(editMode)
-      }
-    }
-  }
+  var editMode: Bool
   
   //MARK: Initialization
   
