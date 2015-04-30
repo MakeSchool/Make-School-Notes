@@ -16,7 +16,7 @@
 		626517221A8E7F9100F1D760 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517211A8E7F9100F1D760 /* Note.swift */; };
 		626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517231A8E7FC400F1D760 /* NoteBook.swift */; };
 		626517351A8E8BC700F1D760 /* MakeSchoolLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */; };
-		626517521A8ED8A300F1D760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517511A8ED8A300F1D760 /* ViewController.swift */; };
+		626517521A8ED8A300F1D760 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517511A8ED8A300F1D760 /* NotesViewController.swift */; };
 		626517541A8ED8DB00F1D760 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */; };
 		629EA1711A97AD63000039FA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629EA1701A97AD63000039FA /* Realm.framework */; };
 		629EA1731A97AD78000039FA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 629EA1721A97AD78000039FA /* libc++.dylib */; };
@@ -109,7 +109,7 @@
 		626517231A8E7FC400F1D760 /* NoteBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteBook.swift; sourceTree = "<group>"; };
 		6265172A1A8E8BC700F1D760 /* MakeSchoolLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MakeSchoolLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		626517341A8E8BC700F1D760 /* MakeSchoolLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeSchoolLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		626517511A8ED8A300F1D760 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		626517511A8ED8A300F1D760 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		629EA1701A97AD63000039FA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		629EA1721A97AD78000039FA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -257,7 +257,7 @@
 		626517501A8ED8A300F1D760 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				626517511A8ED8A300F1D760 /* ViewController.swift */,
+				626517511A8ED8A300F1D760 /* NotesViewController.swift */,
 				626517531A8ED8DB00F1D760 /* NewNoteViewController.swift */,
 				629EA1761A97AF27000039FA /* NoteDisplayViewController.swift */,
 			);
@@ -479,7 +479,7 @@
 				629EA1751A97AD96000039FA /* RLMSupport.swift in Sources */,
 				626517241A8E7FC400F1D760 /* NoteBook.swift in Sources */,
 				62A70CEE1AF1792800B09606 /* StyleConstants.swift in Sources */,
-				626517521A8ED8A300F1D760 /* ViewController.swift in Sources */,
+				626517521A8ED8A300F1D760 /* NotesViewController.swift in Sources */,
 				624FFEE31A9B975E006F85AA /* NoteTableViewCell.swift in Sources */,
 				629EA1771A97AF27000039FA /* NoteDisplayViewController.swift in Sources */,
 				626517221A8E7F9100F1D760 /* Note.swift in Sources */,

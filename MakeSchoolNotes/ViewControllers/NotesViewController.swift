@@ -9,7 +9,7 @@
 import UIKit
 import Realm
 
-class ViewController: UIViewController {
+class NotesViewController: UIViewController {
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     }
   }
   
-  //MARK: - Search
+  //MARK: Search
   
   func searchNotes(searchString: String) -> RLMResults {
     let searchPredicate = NSPredicate(format: "title CONTAINS[c] %@ OR content CONTAINS[c] %@", searchString, searchString)
@@ -97,7 +97,7 @@ class ViewController: UIViewController {
   }
 }
 
-extension ViewController: UITableViewDataSource {
+extension NotesViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell") as! NoteTableViewCell
@@ -114,7 +114,7 @@ extension ViewController: UITableViewDataSource {
   
 }
 
-extension ViewController: UITableViewDelegate {
+extension NotesViewController: UITableViewDelegate {
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     selectedNote = notes.objectAtIndex(UInt(indexPath.row)) as? Note
@@ -123,7 +123,7 @@ extension ViewController: UITableViewDelegate {
   
 }
 
-extension ViewController: UISearchBarDelegate {
+extension NotesViewController: UISearchBarDelegate {
   
   func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
     state = .SearchMode
