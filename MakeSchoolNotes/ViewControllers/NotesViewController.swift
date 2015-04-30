@@ -38,7 +38,7 @@ class NotesViewController: UIViewController {
       // update notes and search bar whenever State changes
       switch (state) {
       case .DefaultMode:
-        notes = Note.allObjects()
+        notes = Note.allObjects().sortedResultsUsingProperty("modificationDate", ascending: false)
         self.navigationController!.setNavigationBarHidden(false, animated: true)
         searchBar.resignFirstResponder()
         searchBar.text = ""
@@ -102,7 +102,7 @@ extension NotesViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell") as! NoteTableViewCell
     let row = UInt(indexPath.row)
-    let note = notes.objectAtIndex(row) as! Note
+    let note = notes[row] as! Note
     cell.note = note
     
     return cell
@@ -119,6 +119,23 @@ extension NotesViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     selectedNote = notes.objectAtIndex(UInt(indexPath.row)) as? Note
     self.performSegueWithIdentifier("ShowExistingNote", sender: self)
+  }
+  
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if (editingStyle == .Delete) {
+      let note = notes[UInt(indexPath.row)] as! RLMObject
+      let realm = RLMRealm.defaultRealm()
+     
+      realm.transactionWithBlock() {
+        realm.deleteObject(note)
+      }
+      
+      notes = Note.allObjects().sortedResultsUsingProperty("modificationDate", ascending: false)
+    }
   }
   
 }
