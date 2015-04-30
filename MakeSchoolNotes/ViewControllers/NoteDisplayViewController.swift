@@ -96,9 +96,11 @@ class NoteDisplayViewController: UIViewController {
       let realm = RLMRealm.defaultRealm()
 
       realm.transactionWithBlock { () -> Void in
-        note.title = self.titleTextField.text
-        note.content = self.contentTextView.textValue
-        note.modificationDate = NSDate()
+        if (note.title != self.titleTextField.text || note.content != self.contentTextView.textValue) {
+          note.title = self.titleTextField.text
+          note.content = self.contentTextView.textValue
+          note.modificationDate = NSDate()
+        }
       }
     }
   }
