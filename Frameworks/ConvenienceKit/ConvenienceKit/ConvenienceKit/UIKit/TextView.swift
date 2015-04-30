@@ -67,7 +67,7 @@ public class TextView : UITextView {
     didSet {
       if let showsPlaceholderText = showsPlaceholderText {
         if (showsPlaceholderText == true) {
-          textColor = UIColor.lightGrayColor()
+          textColor = placeHolderTextColor
           text = placeholderText
         } else {
           textColor = UIColor.blackColor()
@@ -75,6 +75,8 @@ public class TextView : UITextView {
       }
     }
   }
+  
+  @IBInspectable public var placeHolderTextColor: UIColor = UIColor.lightGrayColor()
   
   public func textViewDidEndEditing(notification: NSNotification) {
     self.showsPlaceholderText = (count(self.text) == 0)
