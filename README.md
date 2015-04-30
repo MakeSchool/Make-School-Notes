@@ -6,6 +6,10 @@ This is the final project of the Make School Notes Swift Tutorial. This brief do
 
 Provides different components used throughout the App. The biggest component used by this app is the `TextView` that unlike `UITextView` allows to display a placeholder text.
 
+##Realm
+
+A simple persistence framework. Used to persist notes created in the app.
+
 #Class Overview
 
 ##StyleConstants
